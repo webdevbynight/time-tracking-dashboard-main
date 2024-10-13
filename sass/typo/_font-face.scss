@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/** @section Font */
+@font-face {
+    font-family: Rubik;
+    src: url("fonts/Rubik-VariableFont_wght.woff2") format(woff2) tech(variations);
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+}

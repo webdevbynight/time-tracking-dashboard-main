@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/** @section General layout */
+body {
+    font-family: var(--font);
+    color: var(--primary);
+    background: var(--primary-background);
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvb;
+}
+main {
+    flex: 1;
+    padding: 8.1rem 2.4rem;
+}
+.attribution {
+    font-size: 1.1rem;
+    text-align: center;
+    a {
+        color: inherit;
+    }
+}

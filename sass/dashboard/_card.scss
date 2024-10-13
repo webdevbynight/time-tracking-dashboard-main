@@ -1,0 +1,90 @@
+@charset "utf-8";
+@use "sass:list";
+@use "../base/mixins" as *;
+@use "./mixins" as mixins;
+
+/** @section Card */
+.card {
+    font-size: 1.5rem;
+    background: var(--secondary-background);
+    display: grid;
+    grid-template: calc(var(--dashboard-card-outer-top) + var(--dashboard-card-outer-mask)) repeat(2, auto) / repeat(2, 1fr);
+    gap: .6rem var(--dashboard-card-padding-inline);
+    padding: 0 var(--dashboard-card-padding-inline) var(--dashboard-card-padding-block);
+    margin-block-start: var(--dashboard-card-gap);
+    border-radius: var(--dashboard-card-radius);
+    overflow: hidden;
+    position: relative;
+    &::before {
+        background: url("images/dashboard-card-themes.svg") no-repeat;
+        grid-column: 1 / -1;
+        margin-inline: calc(var(--dashboard-card-padding-inline) * -1);
+        content: "";
+    }
+    &::after {
+        background: inherit;
+        height: var(--dashboard-card-outer-mask);
+        border-radius: var(--dashboard-card-radius) var(--dashboard-card-radius) 0 0;
+        position: absolute;
+        inset-block-start: var(--dashboard-card-outer-top);
+        inset-inline: 0;
+        content: "";
+    }
+    &:hover {
+        background: var(--secondary-background-hover);
+    }
+    p {
+        &:nth-last-of-type(odd) {
+            justify-self: end;
+        }
+    }
+    button {
+        @include mixins.dashboard-button;
+        use {
+            fill: var(--primary-button);
+            + use {
+                transform: translateX(8px);
+                + use {
+                    transform: translateX(16px);
+                }
+            }
+        }
+        &:hover,
+        &:focus {
+            use {
+                fill: var(--primary-button-hover);
+            }
+        }
+    }
+    .sr-only {
+        @include css-visually-hidden;
+    }
+    .title {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    .current {
+        font-size: 3.2rem;
+        font-weight: 300;
+    }
+    .last {
+        color: var(--tertiary);
+        align-self: center;
+    }
+    $themes: (
+        work 17px -11px,
+        play 11px -81px,
+        study 17px -162px,
+        exercise 18px -235px,
+        social 13px -300px,
+        self-care 7px -400px
+    );
+    @each $theme, $position-x, $position-y in $themes {
+        &.#{$theme} {
+            &::before {
+                background-color: var(--primary-#{$theme});
+                background-position: right #{$position-x} top #{$position-y};
+            }
+        }
+    }
+}

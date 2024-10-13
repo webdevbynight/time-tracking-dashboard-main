@@ -1,0 +1,23 @@
+@charset "utf-8";
+@use "sass:list";
+
+/**
+ * @site Time tracking dashboard
+ * @author Victor Brito
+ */
+
+// Browser configuration
+@use "./base/config" as *;
+
+@use "./base/mixins" with (
+    $media-queries-breakpoints: (
+        // Add custom breakpoints here if default ones do not fit the project
+    )
+);
+@use "./variables";
+@use "./base/reset";
+@use "./base/print";
+@use "./typo/font-face";
+@use "./layout/layout";
+@use "./dashboard/dashboard";
+@use "./dashboard/card";

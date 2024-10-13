@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+// Variables
+:root {
+    // Font and typo
+    --font: Rubik, sans-serif;
+
+    // Colours
+    --primary: white;
+    --secondary: #7078c9;
+    --tertiary: #bbc0ff;
+    --primary-background: #0e1323;
+    --secondary-background: #1c204b;
+    --secondary-background-hover: #33397a;
+    --tertiary-background: #5747ea;
+    --primary-button: #bbc0ff;
+    --primary-button-hover: white;
+    --primary-work: #ff8c66;
+    --primary-play: #56c2e6;
+    --primary-study: #ff5c7c;
+    --primary-exercise: #4acf81;
+    --primary-social: #7536d3;
+    --primary-self-care: #f1c65b;
+
+    // Margins, paddings, borders, gaps and shadows
+    --dashboard-radius: 1.5rem;
+    --dashboard-card-gap: 2.4rem;
+    --dashboard-card-outer-top: 3.8rem;
+    --dashboard-card-outer-mask: 2.2rem;
+    --dashboard-card-padding-block: 2.8rem;
+    --dashboard-card-padding-inline: 2.4rem;
+    --dashboard-card-radius: 1.5rem;
+}

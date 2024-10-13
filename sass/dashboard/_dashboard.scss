@@ -1,0 +1,51 @@
+@charset "utf-8";
+@use "./mixins" as mixins;
+
+/** @section Dashboard */
+.dashboard {
+    line-height: normal;
+    header {
+        font-size: 1.8rem;
+        background: var(--secondary-background);
+        border-radius: var(--dashboard-radius);
+        nav {
+            display: flex;
+            padding-block: 2.4rem 2.5rem;
+        }
+        button {
+            @include mixins.dashboard-button;
+            color: var(--secondary);
+            flex: 1;
+            &:hover,
+            &:focus,
+            &.active {
+                color: var(--primary);
+            }
+        }
+        img {
+            grid-row: 1 / -1;
+            align-self: center;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+        }
+        .title {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: var(--tertiary);
+            background: var(--tertiary-background);
+            display: grid;
+            grid-template: repeat(2, 0fr) /  70px 1fr;
+            gap: .4rem 2rem;
+            align-items: end;
+            padding: 3.2rem 2.9rem;
+            border-radius: var(--dashboard-radius);
+        }
+        .name {
+            font-size: 2.4rem;
+            font-weight: 300;
+            color: var(--primary);
+            align-self: start;
+        }
+    }
+
+}
