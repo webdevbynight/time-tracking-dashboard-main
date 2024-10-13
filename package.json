@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "scripts": {
+    "biome": "biome check --write .",
+    "biome:format": "biome format --write .",
+    "biome:lint": "biome lint --write .",
+    "build": "tsc && node tools/build.js",
+    "dev": "npm run dev:browser-sync & npm run dev:sass & npm run dev:tsc",
+    "dev:browser-sync": "browser-sync start --server --port 4000 --files \"*.html\" \"css/*.css\" \"ts/*.ts\" --open \"external\" --browser \"firefox\" \"google chrome\" \"safari\"",
+    "dev:sass": "sass --watch sass:css --style=compressed",
+    "dev:tsc": "tsc --watch --preserveWatchOutput",
+    "install-web-fonts": "node tools/install-web-fonts.js",
+    "validate-html": "node tools/w3c-html-validator.js"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.3",
+    "browser-sync": "^3.0.3",
+    "typescript": "^5.6.3",
+    "w3c-html-validator": "^1.8.2"
+  }
+}
