@@ -11,7 +11,7 @@
 
 @use "./base/mixins" with (
     $media-queries-breakpoints: (
-        // Add custom breakpoints here if default ones do not fit the project
+        multicolumn-dashboard: 588
     )
 );
 @use "./variables";

@@ -87,4 +87,24 @@
             }
         }
     }
+    @include css-media-queries($from-breakpoint: multicolumn-dashboard) {
+        --dashboard-card-outer-top: 4.5rem;
+        --dashboard-card-padding-block: 3.2rem;
+        --dashboard-card-padding-inline: 3rem;
+        row-gap: .8rem;
+        margin-block-start: initial;
+        p {
+            &:not(:first-of-type) {
+                justify-self: initial;
+            }
+        }
+        .current,
+        .last {
+            grid-column: 1 / -1;
+        }
+        .current {
+            font-size: 5.6rem;
+            margin-block-start: 1.6rem;
+        }
+    }
 }

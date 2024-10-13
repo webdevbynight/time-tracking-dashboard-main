@@ -1,4 +1,5 @@
 @charset "utf-8";
+@use "../base/mixins" as *;
 @use "./mixins" as mixins;
 
 /** @section Dashboard */
@@ -47,5 +48,39 @@
             align-self: start;
         }
     }
-
+    @include css-media-queries($from-breakpoint: multicolumn-dashboard) {
+        --dashboard-card-gap: 3rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, var(--dashboard-card-size));
+        gap: var(--dashboard-card-gap);
+        justify-content: center;
+        inline-size: clamp(54rem, calc(100dvi - var(--outer-spacing-inline) * 2), 111rem);
+        header {
+            grid-row: span 2;
+            nav {
+                flex-direction: column;
+                gap: 2.1rem;
+                align-items: flex-start;
+                padding: 2.6rem 3.2rem 3.3rem;
+            }
+            img,
+            .title,
+            .name {
+                display: block;
+            }
+            img {
+                width: 78px;
+                aspect-ratio: 1;
+                margin-block-end: 4rem;
+                box-shadow: rgb(0 0 0 / .25) 0 .4rem .4rem;
+            }
+            .title {
+                padding-block: 3.4rem 8rem;
+            }
+            .name {
+                font-size: 4rem;
+                margin-block-start: .3rem;
+            }
+        }
+    }
 }
