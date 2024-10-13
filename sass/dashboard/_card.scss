@@ -16,7 +16,7 @@
     overflow: hidden;
     position: relative;
     &::before {
-        background: url("images/dashboard-card-themes.svg") no-repeat;
+        background: var(--tertiary-background) url("images/dashboard-card-themes.svg") no-repeat;
         grid-column: 1 / -1;
         margin-inline: calc(var(--dashboard-card-padding-inline) * -1);
         content: "";
