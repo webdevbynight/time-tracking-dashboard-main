@@ -8,7 +8,7 @@
     font-size: 1.5rem;
     background: var(--secondary-background);
     display: grid;
-    grid-template: calc(var(--dashboard-card-outer-top) + var(--dashboard-card-outer-mask)) repeat(2, auto) / repeat(2, 1fr);
+    grid-template: calc(var(--dashboard-card-outer-top) + var(--dashboard-card-outer-mask)) repeat(2, auto) / auto 1fr;
     gap: .6rem var(--dashboard-card-padding-inline);
     padding: 0 var(--dashboard-card-padding-inline) var(--dashboard-card-padding-block);
     margin-block-start: var(--dashboard-card-gap);
